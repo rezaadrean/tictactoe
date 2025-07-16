@@ -8,12 +8,12 @@ import org.springframework.security.web.SecurityFilterChain;
 public class WebSecurityConfig {
 
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .csrf().disable() // matikan CSRF dulu untuk test API
-            .authorizeHttpRequests()
-                .requestMatchers("/test/**", "/actuator/**").permitAll() // endpoint publik
-                .anyRequest().authenticated(); // lainnya tetap butuh login
+            .csrf().disable() // matikan CSRF protection
+            .authorizeHttpRequests(authorize -> authorize
+                .anyRequest().permitAll() // izinkan semua endpoint
+            );
 
         return http.build();
     }
