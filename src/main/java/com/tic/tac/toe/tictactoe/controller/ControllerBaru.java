@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @CrossOrigin(origins = "*")
 @RestController
-public class NewController {
+public class ControllerBaru {
 
     @GetMapping("/testing")
     public String testing(){
