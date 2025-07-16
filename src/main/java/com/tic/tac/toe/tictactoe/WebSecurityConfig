@@ -12,7 +12,7 @@ public class WebSecurityConfig {
         http
             .csrf().disable() // matikan CSRF dulu untuk test API
             .authorizeHttpRequests()
-                .requestMatchers("/api/**", "/actuator/**").permitAll() // endpoint publik
+                .requestMatchers("/test/**", "/actuator/**").permitAll() // endpoint publik
                 .anyRequest().authenticated(); // lainnya tetap butuh login
 
         return http.build();
