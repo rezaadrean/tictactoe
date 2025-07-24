@@ -10,6 +10,6 @@ public class ControllerBaru {
 
     @GetMapping("/testing")
     public String testing(){
-        return "testing ci cd";
+        return "testing ci cd 2025";
     }
 }
